@@ -73,6 +73,11 @@ const createSVG = (response) => {
             message: questions[3],
         },
     ])
+    .then((response) => {
+        createSVG(response);
+    }
+    );
+
 
 
 
