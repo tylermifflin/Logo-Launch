@@ -15,14 +15,21 @@ const createSVG = (response) => {
         const circle = new Circle();
         circle.setColor(shapeColor);
         const svg = circle.render();
-        fs.writeFile('image.svg', svg, (err) =>
+        fs.writeFile('logo.svg', svg, (err) =>
         err ? console.log(err) : console.log('Successfully created image.svg!')
         );
     } else if (shape === "square") {
         const square = new Square();
         square.setColor(shapeColor);
         const svg = square.render();
-        fs.writeFile('image.svg', svg, (err) =>
+        fs.writeFile('logo.svg', svg, (err) =>
+        err ? console.log(err) : console.log('Successfully created image.svg!')
+        );
+    } else if (shape === "triangle") {
+        const triangle = new Triangle();
+        triangle.setColor(shapeColor);
+        const svg = triangle.render();
+        fs.writeFile('logo.svg', svg, (err) =>
         err ? console.log(err) : console.log('Successfully created image.svg!')
         );
    
