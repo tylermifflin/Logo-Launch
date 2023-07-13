@@ -9,40 +9,34 @@ const questions = ["What text would you like to add? (enter 1-3 characters)", "W
 
  // function to write the svg file using the shapes library
 const createSVG = (response) => {
-    const text = response.text;
-    const textColor = response.textColor;
     const shape = response.shape;
     const shapeColor = response.shapeColor;
-    if (shape === "circle") {
+    const textColor = response.textColor;
+    const text = response.text;
+    let svgtemplate = "";
+    svgtemplate += `<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">`;
+    svgtemplate += "<g>";
+    // grab the shape from the response and create the shape
+
+    if (response.shape === "circle") {
         const circle = new Circle();
-        circle.setColor(shapeColor);
-        circle.setText(text);
-        circle.setTextColor(textColor); 
-        const svg = circle.render();
-        fs.writeFile('logo.svg', svg, (err) =>
-        err ? console.log(err) : console.log('Successfully created image.svg!')
-        );
-    } else if (shape === "square") {
+        svgtemplate += circle.render();
+    } else if (response.shape === "square") {
         const square = new Square();
-        square.setColor(shapeColor);
-        square.setText(text);
-        square.setTextColor(textColor);
-        const svg = square.render();
-        fs.writeFile('logo.svg', svg, (err) =>
-        err ? console.log(err) : console.log('Successfully created image.svg!')
-        );
-    } else if (shape === "triangle") {
+        svgtemplate += square.render();
+    } else if (response.shape === "triangle") {
         const triangle = new Triangle();
-        triangle.setColor(shapeColor);
-        triangle.setText(text);
-        triangle.setTextColor(textColor);
-        const svg = triangle.render();
-        fs.writeFile('logo.svg', svg, (err) =>
-        err ? console.log(err) : console.log('Successfully created image.svg!')
-        );
+        svgtemplate += triangle.render();
     }
+
+    svgtemplate += `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${textColor}">${text}</text>`;
+    svgtemplate += "</g>";
+    svgtemplate += "</svg>";
+
+    fs.writeFile('logo.svg', svgtemplate, (err) =>
+    err ? console.log(err) : console.log('Successfully created logo.svg!')
+    );
 };
-   
 // function to prompt the user using inquirer
  const startprompt = () =>
  inquirer
@@ -55,6 +49,7 @@ const createSVG = (response) => {
                 if (text.length > 3) {
                     return 'Please enter 1-3 characters';
                 }
+                return true;
         },
         },
         {
