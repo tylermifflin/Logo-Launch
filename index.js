@@ -14,6 +14,8 @@ const createSVG = (response) => {
     if (shape === "circle") {
         const circle = new Circle();
         circle.setColor(shapeColor);
+        circle.setText(text);
+        circle.setTextColor(textColor); 
         const svg = circle.render();
         fs.writeFile('logo.svg', svg, (err) =>
         err ? console.log(err) : console.log('Successfully created image.svg!')
@@ -21,6 +23,8 @@ const createSVG = (response) => {
     } else if (shape === "square") {
         const square = new Square();
         square.setColor(shapeColor);
+        square.setText(text);
+        square.setTextColor(textColor);
         const svg = square.render();
         fs.writeFile('logo.svg', svg, (err) =>
         err ? console.log(err) : console.log('Successfully created image.svg!')
@@ -28,6 +32,8 @@ const createSVG = (response) => {
     } else if (shape === "triangle") {
         const triangle = new Triangle();
         triangle.setColor(shapeColor);
+        triangle.setText(text);
+        triangle.setTextColor(textColor);
         const svg = triangle.render();
         fs.writeFile('logo.svg', svg, (err) =>
         err ? console.log(err) : console.log('Successfully created image.svg!')
