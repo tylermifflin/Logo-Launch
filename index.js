@@ -20,6 +20,11 @@ const createSVG = (response) => {
         );
     } else if (shape === "square") {
         const square = new Square();
+        square.setColor(shapeColor);
+        const svg = square.render();
+        fs.writeFile('image.svg', svg, (err) =>
+        err ? console.log(err) : console.log('Successfully created image.svg!')
+        );
    
   
 
