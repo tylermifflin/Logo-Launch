@@ -78,6 +78,8 @@ const createSVG = (response) => {
     }
     );
 
+// call the startprompt function
+startprompt();
 
 
 
