@@ -10,6 +10,7 @@
 * [Questions](#questions)
 ## Description
 Logo Launch was created to help the user quickly create a custome SVG file. The user can choose up to any 3 text characters and make the text any color they want. The user can then choose between using a cirlce, square, or triangle and make it any color they want. The app will then generate their custome SVG file. Here are screenshots of a custom SVG circle, square, and triangle :
+
 ![Screenshot 2023-07-16 at 2 36 49 PM](https://github.com/tylermifflin/Logo-Launch/assets/123903709/868e496f-c139-4641-8bee-17788e760b18)
 ![Screenshot 2023-07-16 at 2 37 03 PM](https://github.com/tylermifflin/Logo-Launch/assets/123903709/159b9f5b-0b3d-4c4e-a41e-a184a376ad08)
 ![Screenshot 2023-07-16 at 2 37 19 PM](https://github.com/tylermifflin/Logo-Launch/assets/123903709/e995b611-7d02-4086-bd39-9939970c6701)
