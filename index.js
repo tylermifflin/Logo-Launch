@@ -10,25 +10,25 @@ const questions = ["What text would you like to add? (enter 1-3 characters)", "W
  // function to write the svg file using the shapes library
 const createSVG = (response) => {
     const shape = response.shape;
-    const shapeColor = response.shapeColor;
+    const color = response.color;
     const textColor = response.textColor;
     const text = response.text;
     let svgtemplate = "";
     svgtemplate += `<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">`;
     svgtemplate += "<g>";
-    // grab the shape from the response and create the shape
-
-    if (response.shape === "circle") {
-        const circle = new Circle();
-        svgtemplate += circle.render();
-    } else if (response.shape === "square") {
-        const square = new Square();
-        svgtemplate += square.render();
-    } else if (response.shape === "triangle") {
-        const triangle = new Triangle();
-        svgtemplate += triangle.render();
+    // get the shape and color from the response.shape and response.color
+    let shapeObj;
+    if (shape === "circle") {
+        shapeObj = new Circle();
+    } else if (shape === "square") {
+        shapeObj = new Square();
+    } else if (shape === "triangle") {
+        shapeObj = new Triangle();
     }
-
+    shapeObj.setColor(color);
+    svgtemplate += shapeObj.render();
+    
+    // get the text and text color from the response.text and response.textColor
     svgtemplate += `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${textColor}">${text}</text>`;
     svgtemplate += "</g>";
     svgtemplate += "</svg>";
@@ -64,7 +64,7 @@ const createSVG = (response) => {
         },
         {
             type: 'input',
-            name: 'shapeColor',
+            name: 'color',
             message: questions[3],
         },
     ])
