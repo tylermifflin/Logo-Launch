@@ -15,7 +15,7 @@ Logo Launch was created to help the user quickly create a custome SVG file. The 
 ![Screenshot 2023-07-16 at 2 37 19 PM](https://github.com/tylermifflin/Logo-Launch/assets/123903709/e995b611-7d02-4086-bd39-9939970c6701)
 
 Here is a link to the walkthrough video demonstrating the tests passing and how to create a custome SVG file :
-file:///Users/tylermifflin/Downloads/Logo%20Launch.webm 
+https://drive.google.com/file/d/1skdS7ZdaiCLU8bICGNulsvxZvIdPOBVD/view?usp=sharing
 
 ## Installation
 The user will need node.js installed on their local computer. The user will then run npm i to install inquirer and jest.
